@@ -1,9 +1,13 @@
-# Work in progress: basic docker image to serve static site with p5js installed
+# Work in progress: serve static page with p5 installed
 FROM nginx:latest
 
-WORKDIR app
+ENV P5_VERSION 0.5.2
 
-ADD https://github.com/processing/p5.js/archive/0.5.2.tar.gz /app
+WORKDIR /usr/share/nginx/html/js/lib
 
-RUN tar -xzf 0.5.2.tar.gz && rm 0.5.2.tar.gz
+RUN apt-get update && apt-get install curl -y \
+        && curl -LO https://github.com/processing/p5.js/releases/download/${P5_VERSION}/p5.dom.min.js
+        && curl -LO https://github.com/processing/p5.js/releases/download/${P5_VERSION}/p5.min.js
+        && curl -LO https://github.com/processing/p5.js/releases/download/${P5_VERSION}/p5.sound.min.js
 
+COPY p5.html /usr/share/nginx/html
