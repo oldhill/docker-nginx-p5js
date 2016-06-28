@@ -3,7 +3,7 @@
 Dockerfile to build an image with an nginx server running on port 80, serving a static site that has [p5.js](https://p5js.org/) installed.
 
 ### License
-This repo includes an [MIT license](https://github.com/oldhill/docker-nginx-p5js/blob/master/LICENSE), but it is based on the official [nginx docker image](https://hub.docker.com/_/nginx/) which includes many pieces other software with their own licenses.
+[MIT](https://github.com/oldhill/docker-nginx-p5js/blob/master/LICENSE). Image is based on official [nginx docker image](https://hub.docker.com/_/nginx/), which includes many other pieces of software with other licenses.
 
 Use at your own risk! Have fun!
 
@@ -22,7 +22,7 @@ $ docker pull oldhill/nginx-p5js && docker run -it -p 8080:80 oldhill/nginx-p5js
 
 #### (2) Customize the static site, and build the image from scratch on your host
 
-- Note: before building Docker images from scratch, it's recommended to read [the official docs](https://docs.docker.com/engine/reference/builder/), since it's possible to accidentally add files to the image that you don't intend, or other things.
+Note: before building Docker images from scratch, it's recommended to read [the official docs](https://docs.docker.com/engine/reference/builder/), since it's possible to accidentally add files from your local disk to the image you're building, or other stuff.
 - Clone this repo
 - Edit `index.js` and `p5.html` to whatever you want (some cool examples are [here](https://p5js.org/examples/)!)
 - **Important:** `cd` to the `docker` directory to run the build command.
