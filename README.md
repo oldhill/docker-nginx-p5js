@@ -1,14 +1,12 @@
 # docker-nginx-p5js
 
-### Summary
-
 Dockerfile to build an image with an nginx server running on port 80, serving a static site that has [p5.js](https://p5js.org/) installed.
 
 **DISCLAIMER**: use at your own risk!
 
 ### Requirements
 
-Requires a working Docker installation. On Mac OSX: [Docker Toolbox](https://www.docker.com/products/docker-toolbox), with the default VM running.
+Requires only a working Docker installation. On Mac OSX: [Docker Toolbox](https://www.docker.com/products/docker-toolbox), with the default VM running.
 
 ### Two options to run this as a container on your host:
 
